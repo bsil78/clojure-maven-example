@@ -17,8 +17,11 @@
 
 (defroutes example-app
 
-  (GET "/"
-    (html [:h1 "Hello World"])))
+  (GET "/" (html [:h1 "Hello World"]))
+  (GET "/hello" (html [:h1 "HELLO"]))
+
+
+  )
 
 
 (defservice example-app)

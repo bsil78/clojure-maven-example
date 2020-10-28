@@ -1,68 +1,32 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <groupId>com.theoryinpractise</groupId>
-    <artifactId>clojure-maven-example</artifactId>
-    <packaging>jar</packaging>
-    <version>1.0-SNAPSHOT</version>
+
     <name>clojure-maven-example</name>
     <url>http://maven.apache.org</url>
-    <build>
-        <plugins>
 
-            <plugin>
-                <groupId>org.clojure</groupId>
-                <artifactId>clojure-maven-plugin</artifactId>
-                <version>1.0-SNAPSHOT</version>
-                <configuration>
+    <groupId>com.theoryinpractise</groupId>
+    <artifactId>clojure-maven-example</artifactId>
+    <version>1.0-SNAPSHOT</version>
 
-                    <namespaces>
-                        <namespace>!compojure.server.grizzly</namespace>
-                    </namespaces>
+    <packaging>pom</packaging>
 
-                    <sourceDirectories>
-                        <sourceDirectory>submodule/compojure/src</sourceDirectory>
-                        <sourceDirectory>src/main/clojure</sourceDirectory>
-                    </sourceDirectories>
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.source>14</maven.compiler.source>
+        <maven.compiler.target>14</maven.compiler.target>
+    </properties>
 
-                    <testSourceDirectories>
-                        <testSourceDirectory>submodule/clojure-http-client/src</testSourceDirectory>
-                        <testSourceDirectory>src/test/clojure</testSourceDirectory>
-                    </testSourceDirectories>
-
-                    <script>src/test/clojure/run.clj</script>
-                    <testScript>src/test/clojure/test.clj</testScript>
-                </configuration>
-                <executions>
-                    <execution>
-                        <id>compile</id>
-                        <phase>compile</phase>
-                        <goals>
-                            <goal>compile</goal>
-                        </goals>
-                    </execution>
-                    <execution>
-                        <id>test</id>
-                        <phase>test</phase>
-                        <goals>
-                            <goal>test</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
-        </plugins>
-
-    </build>
     <dependencies>
         <dependency>
             <groupId>org.clojure</groupId>
-            <artifactId>clojure-lang</artifactId>
-            <version>1.1.0-alpha-SNAPSHOT</version>
+            <artifactId>clojure</artifactId>
+            <version>1.1.0</version>
         </dependency>
         <dependency>
             <groupId>org.clojure</groupId>
             <artifactId>clojure-contrib</artifactId>
-            <version>1.0-SNAPSHOT</version>
+            <version>1.1.0</version>
         </dependency>
         <dependency>
             <groupId>commons-codec</groupId>
@@ -93,4 +57,10 @@
         </dependency>
 
     </dependencies>
+
+    <modules>
+        <module>clojure-http-client</module>
+        <module>compojure</module>
+        <module>clojure-web-app</module>
+    </modules>
 </project>

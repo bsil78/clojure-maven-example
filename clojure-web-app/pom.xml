@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>com.theoryinpractise</groupId>
+    <artifactId>clojure-maven-example</artifactId>
+    <version>1.0-SNAPSHOT</version>
+  </parent>
+
+  <artifactId>clojure-web-app</artifactId>
+  <name>${project.artifactId}</name>
+  <version>1.0.0-SNAPSHOT</version>
+
+  <packaging>jar</packaging>
+
+  <build>
+    <plugins>
+
+      <plugin>
+        <groupId>com.theoryinpractise</groupId>
+        <artifactId>clojure-maven-plugin</artifactId>
+        <version>1.8.1</version>
+        <configuration>
+          <encoding>UTF-8</encoding>
+          <namespaces>
+            <namespace>webapp</namespace>
+          </namespaces>
+
+          <sourceDirectories>
+            <sourceDirectory>src/main/clojure</sourceDirectory>
+          </sourceDirectories>
+
+          <testSourceDirectories>
+            <testSourceDirectory>src/test/clojure</testSourceDirectory>
+          </testSourceDirectories>
+
+          <script>src/test/clojure/run.clj</script>
+          <testScript>src/test/clojure/test.clj</testScript>
+        </configuration>
+        <executions>
+          <execution>
+            <id>compile</id>
+            <phase>compile</phase>
+            <goals>
+              <goal>compile</goal>
+            </goals>
+          </execution>
+          <execution>
+            <id>test</id>
+            <phase>test</phase>
+            <goals>
+              <goal>test</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+
+  </build>
+
+  <dependencies>
+    <dependency>
+      <groupId>com.theoryinpractise</groupId>
+      <artifactId>compojure</artifactId>
+      <version>1.0.0-SNAPSHOT</version>
+    </dependency>
+    <dependency>
+      <groupId>com.theoryinpractise</groupId>
+      <artifactId>clojure-http-client</artifactId>
+      <version>1.0.0-SNAPSHOT</version>
+    </dependency>
+  </dependencies>
+
+</project>

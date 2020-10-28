@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/submodule/clojure-http-client/clojure-http-client.iml" filepath="$PROJECT_DIR$/submodule/clojure-http-client/clojure-http-client.iml" />
+      <module fileurl="file://$PROJECT_DIR$/clojure-maven-example.iml" filepath="$PROJECT_DIR$/clojure-maven-example.iml" />
+      <module fileurl="file://$PROJECT_DIR$/clojure-web-app/clojure-web-app.iml" filepath="$PROJECT_DIR$/clojure-web-app/clojure-web-app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/compojure/compojure.iml" filepath="$PROJECT_DIR$/compojure/compojure.iml" />
+    </modules>
+  </component>
+</project>
